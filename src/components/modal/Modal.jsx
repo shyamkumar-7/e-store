@@ -2,13 +2,14 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useContext, useState } from 'react'
 import QRCode from "react-qr-code";
 import { totalContext } from '../../main';
+import { useNavigate } from 'react-router-dom';
 
 // import {grandtotal} from '../modal/../../pages/cart/Cart'
 
 
 export default function Modal({ name, address, pincode, phoneNumber, setName, setAddress, setPincode, setPhoneNumber, buyNow, grandtotal}) {
     let [isOpen, setIsOpen] = useState(false)
-
+     
     function closeModal() {
         setIsOpen(false)
     }
@@ -16,6 +17,8 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
     function openModal() {
         setIsOpen(true)
     }
+
+    const navigate=useNavigate();
 // // CHanges
 //     function pay(){
 //         // const instagramURL = 'https://www.instagram.com/';
@@ -28,7 +31,6 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
 //         />
 //     }
 
-    const {total,setTotal}=useContext(totalContext)
      return (
         <>
             <div className="  text-center rounded-lg text-white font-bold">
@@ -92,17 +94,17 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
                                                             <input value={phoneNumber} onChange={(e)=>setPhoneNumber(e.target.value)} type="text" name="mobileNumber" id="mobileNumber" className=" border outline-0 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-100" required />
                                                         </div>
                                                         {/* CHanges */}
-                                                        <div>
+                                                        {/* <div>
                                                         <QRCode
                                                         size={120}
                                                         style={{ height: "auto", maxWidth: "100%", width: "100%" }}
                                                         value={`upi://pay?pn=Pawan%20Bhawsar&pa=9340790805@ybl&am=${total}&cu=INR`}
                                                         viewBox={`0 0 120 120`}
                                                         />
-                                                        </div>
+                                                        </div> */}
 
                                                     </form>
-                                                    <button onClick={()=>{pay(),  closeModal()} } type="button" className="focus:outline-none w-full text-white bg-violet-600  hover:bg-violet-800  outline-0 font-medium rounded-lg text-sm px-5 py-2.5 ">Order Now</button>
+                                                    <button onClick={()=>{navigate('/qr')}} type="button" className="focus:outline-none w-full text-white bg-violet-600  hover:bg-violet-800  outline-0 font-medium rounded-lg text-sm px-5 py-2.5 ">Order Now</button>
                                                 </div>
                                             </div>
                                         </div>

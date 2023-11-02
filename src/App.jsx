@@ -7,6 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from './pages/home/Home';
+import Qr from '../src/components/modal/Qr';
 import Order from './pages/order/Order';
 import Cart from './pages/cart/Cart';
 import Dashboard from './pages/admin/dashboard/Dashboard';
@@ -44,6 +45,7 @@ function App() {
             <AddProduct/>
           </ProtectedRouteForAdmin>
         }  />
+        <Route path='/qr' element={<Qr/>}/>
         <Route path="/updateproduct" element={<ProtectedRouteForAdmin>
           <UpdateProduct/>
         </ProtectedRouteForAdmin>}  />
