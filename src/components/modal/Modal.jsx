@@ -3,6 +3,7 @@ import { Fragment, useContext, useState } from 'react'
 import QRCode from "react-qr-code";
 import { totalContext } from '../../main';
 import { useNavigate } from 'react-router-dom';
+import Modal2 from '../../components/modal/QRN';
 
 // import {grandtotal} from '../modal/../../pages/cart/Cart'
 
@@ -104,7 +105,19 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
                                                         </div> */}
 
                                                     </form>
-                                                    <button onClick={()=>{navigate('/qr')}} type="button" className="focus:outline-none w-full text-white bg-violet-600  hover:bg-violet-800  outline-0 font-medium rounded-lg text-sm px-5 py-2.5 ">Order Now</button>
+                                                    {/* <button onClick={()=>{navigate('/qr1')}} type="button" className="focus:outline-none w-full text-white bg-violet-600  hover:bg-violet-800  outline-0 font-medium rounded-lg text-sm px-5 py-2.5 ">Order Now
+                                                    </button> */}
+                                                    <Modal2
+                                                        name={name}
+                                                        address={address}
+                                                        pincode={pincode}
+                                                        phoneNumber={phoneNumber}
+                                                        setName={setName}
+                                                        setAddress={setAddress}
+                                                        setPincode={setPincode}
+                                                        setPhoneNumber={setPhoneNumber}
+                                                        buyNow={buyNow}
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
