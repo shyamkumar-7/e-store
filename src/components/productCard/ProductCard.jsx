@@ -31,16 +31,15 @@ function ProductCard() {
                     <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style={{ color: mode === 'dark' ? 'white' : '' }}>Our Latest Collection</h1>
                     <div class="h-1 w-20 bg-green-500 rounded"></div>
                 </div>
+                
 
                 <div className="flex flex-wrap -m-4">
-
-
-                {product.map((item,index)=>{
+                 {product.map((item,index)=>{
 
                     const { title, price, description, imageUrl } = item;
 
                     return (
-                        <div key={index} className="p-4 md:w-1/4  drop-shadow-lg " >
+                        <div  key={index} className="p-4 md:w-1/4  drop-shadow-lg " >
                         <div className="h-full border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out    border-gray-200 border-opacity-60 rounded-2xl overflow-hidden" style={{ backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '', color: mode === 'dark' ? 'white' : '', }} >
                             <div className="flex justify-center cursor-pointer" >
                                 <img className=" rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out" src={imageUrl} alt="blog" />

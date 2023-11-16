@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function DashboardTab() {
     const context = useContext(myContext)
-    const { mode, product, edithandle, deleteProduct } = context;
+    const { mode, product, edithandle, deleteProduct , order} = context;
     // console.log(product) 
     let [isOpen, setIsOpen] = useState(false)
 
@@ -35,20 +35,20 @@ function DashboardTab() {
                                     <div className="flex gap-2 items-center">
                                         <MdOutlineProductionQuantityLimits />Products</div> </button>
                             </Tab>
-                            <Tab>
+                            {/* <Tab>
                                 <button type="button" className="font-medium border-b-2 border-pink-500 bg-[#605d5d12] text-pink-500  hover:shadow-pink-700  rounded-lg text-xl shadow-[inset_0_0_8px_rgba(0,0,0,0.6)]    px-5 py-1.5 text-center ">
                                     <div className="flex gap-2 items-center">
                                         <AiFillShopping /> Order
                                     </div>
                                 </button>
-                            </Tab>
-                            <Tab>
+                            </Tab> */}
+                            {/* <Tab>
                                 <button type="button" className="font-medium border-b-2 border-green-500 bg-[#605d5d12] text-green-500 rounded-lg text-xl  hover:shadow-green-700 shadow-[inset_0_0_8px_rgba(0,0,0,0.6)]   px-5 py-1.5 text-center ">
                                     <div className="flex gap-2 items-center">
                                         <FaUser /> Users
                                     </div>
                                 </button>
-                            </Tab>
+                            </Tab> */}
                         </TabList>
                         {/* product  */}
                         <TabPanel>
@@ -285,7 +285,7 @@ function DashboardTab() {
                                                 kkk@gmail.com
                                             </td>
                                             <td className="px-6 py-4 text-black " style={{ color: mode === 'dark' ? 'white' : '' }}>
-                                                12 Aug 2019
+                                                dd/mm/yyyy
                                             </td>
 
                                         </tr>

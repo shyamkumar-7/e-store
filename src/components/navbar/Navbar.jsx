@@ -75,11 +75,11 @@ function Navbar() {
                     All Products
                   </Link>
 
-                  {user ? <div className="flow-root">
+                  {/* {user ? <div className="flow-root">
                     <Link to={'/order'} style={{ color: mode === 'dark' ? 'white' : '', }} className="-m-2 block p-2 font-medium text-gray-900">
                       Order
                     </Link>
-                  </div> :""}
+                  </div> :""} */}
 
                   
                   {user?.user?.email==='kumarshyam03662@gmail.com' ? 
@@ -160,9 +160,9 @@ function Navbar() {
                     All Products
                   </Link>
 
-                 {user ?  <Link to={'/cart'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                 {/* {user ?  <Link to={'/cart'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Orders
-                  </Link> : ""}
+                  </Link> : ""} */}
 
                   <Link to={'/signup'}  className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Signup
